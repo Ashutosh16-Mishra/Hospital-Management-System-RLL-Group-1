@@ -1,0 +1,44 @@
+===================================================================
+Appointment database
+
+create table appointment (
+       appointment_id bigint not null auto_increment,
+        approved bit not null,
+        doctor_id bigint,
+        patient_id bigint,
+        primary key (appointment_id)
+    ) engine=InnoDB
+
+=========================================================================== 
+Doctor database
+ 
+    create table doctor (
+       docter_id bigint not null auto_increment,
+        approved bit not null,
+        name varchar(255),
+        specialization varchar(255),
+        primary key (docter_id)
+    ) engine=InnoDB
+=========================================================================== 
+patient database
+
+    create table patient (
+       patient_id bigint not null auto_increment,
+        approved bit not null,
+        assigned_doctor_id bigint,
+        discharged bit not null,
+        mobile varchar(255),
+        name varchar(255),
+        primary key (patient_id)
+    ) engine=InnoDB
+=========================================================================== 
+User database
+
+  create table user (
+       id bigint not null auto_increment,
+        approved bit not null,
+        password varchar(255),
+        role varchar(255),
+        username varchar(255),
+        primary key (id)
+    ) engine=InnoDB
